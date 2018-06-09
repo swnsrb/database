@@ -8,10 +8,10 @@
 </head>
 <body>
 <form action="Cwrite.jsp" method="post">
-	이름 : <input name="name" type="text" size=10></input><br>
-	비번 : <input name="pass" type="password" size=10></input><br>
-	내용 : <input name="content" type="text" size=100></input><br>
-	<input type="submit" value="작성"></input>
+이름 : <input type="text" size="20" name="name" /><br />
+비번 : <input type="text" size="20" name="pass" /><br />
+소감 : <input type="text" size="20" name="content" /><br />
+<input type="submit" value="작성" /><br />
 </form>
 </body>
 </html>
