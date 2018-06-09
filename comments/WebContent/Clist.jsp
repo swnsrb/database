@@ -14,16 +14,19 @@
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
+	
 	String url = "jdbc:oracle:thin:@localhost:1521:ORCL";
 	String user = "scott";
 	String pw = "tiger";
 	String sql = "select * from comments order by seq desc";
+	
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	con = DriverManager.getConnection(url, user, pw);
 	pstmt = con.prepareStatement(sql);
 	rs = pstmt.executeQuery();
 	rs.next();
 	out.print(rs.getString(2));
+	
 	while(rs.next()) {
 		int seq = rs.getInt(1);
 		String name = rs.getString(2);

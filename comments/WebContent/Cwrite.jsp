@@ -15,10 +15,12 @@
 	String content=request.getParameter("content");
 	Connection con = null;
 	PreparedStatement pstmt = null;
+	
 	String url = "jdbc:oracle:thin:@localhost:1521:ORCL";
 	String user = "scott";
 	String pw = "tiger";
 	String sql="insert into comments(seq, name, pass, content) values ((select max(seq)+1 from comments), ?, ?, ?)";
+
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	con = DriverManager.getConnection(url, user, pw);
 	pstmt = con.prepareStatement(sql);
